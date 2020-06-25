@@ -1,26 +1,20 @@
 <?php get_header(); ?>
 
+<div class="container">
 <div class="row">
 
-    <div class="col-sm-8 blog-main">
+    <div class="col-sm-8 blog-main text-center">
 
-        <?php
-        if ( have_posts() ) : 
-            while ( have_posts() ) : 
-                
-                the_post();
-                get_template_part( 'content', get_post_format() ); 
-        
-            endwhile; 
-        ?>
-        <?php
-        endif;
-        ?>
+        <h3>Nažalost, sadržaj koji tražite ne postoji.</h3>
+        <h6>Vratite se na <a href="/">glavnu stranicu</a>.</h6>
 
-    </div><!-- /.blog-main --> 
+    </div>
+    <div class="col-md-4">
 
-    <?php get_sidebar(); ?>
+    <?php get_template_part('parts/sidebar/sidebar', 'page'); ?>
 
-</div><!-- /.row -->
+    </div>
+</div>
+</div>
 
 <?php get_footer(); ?>

@@ -9,47 +9,48 @@
           <h5>NAJNOVIJE</h5>
         </div>
         <div class="blog-posts">
-          <div class="last-post text-center mt-5">
-            <img src="" style="height: 350px; width: 100%; background-color: #e8e8e8;" />
-            <h3>Post title</h3>
-            <span>Jun 2020</span>
-            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-          </div>
+          <?php
+
+          $blog_post = new WP_Query( 
+              array( 'cat' => 2,
+                    'posts_per_page' => 1,
+                  ));        
+              if ( $blog_post->have_posts() ) : 
+                while ( $blog_post->have_posts() ) :
+                  $blog_post->the_post();
+                  get_template_part('parts/blog/blog', 'first-post'); 
+                endwhile;    
+              endif;
+
+          ?>
           <div class="divider"></div>
           <div class="other-posts row">
-            <div class="col-md-6 text-center mt-3">
-              <img src="" style="height: 150px; width: 100%; background-color: #e8e8e8;" />
-              <h4>Post title</h4>
-              <span>Jun 2020</span>
-            </div>
-            <div class="col-md-6 text-center mt-3">
-              <img src="" style="height: 150px; width: 100%; background-color: #e8e8e8;" />
-              <h4>Post title</h4>
-              <span>Jun 2020</span>
-            </div>
-            <div class="col-md-6 text-center mt-3">
-              <img src="" style="height: 150px; width: 100%; background-color: #e8e8e8;" />
-              <h4>Post title</h4>
-              <span>Jun 2020</span>
-            </div>
-            <div class="col-md-6 text-center mt-3">
-              <img src="" style="height: 150px; width: 100%; background-color: #e8e8e8;" />
-              <h4>Post title</h4>
-              <span>Jun 2020</span>
-            </div>
-            <div class="col-md-6 text-center mt-3">
-              <img src="" style="height: 150px; width: 100%; background-color: #e8e8e8;" />
-              <h4>Post title</h4>
-              <span>Jun 2020</span>
-            </div>
-            <div class="col-md-6 text-center mt-3">
-              <img src="" style="height: 150px; width: 100%; background-color: #e8e8e8;" />
-              <h4>Post title</h4>
-              <span>Jun 2020</span>
-            </div>
+            <?php 
+            
+                $posts = new WP_Query( 
+                  array( 'cat' => 2,
+                    'posts_per_page' => 5,
+                    'paged' => $paged
+                  ));        
+                  if ( $posts->have_posts() ) : 
+                    $counter = 0;
+                    while ( $posts->have_posts() ) :
+                      $counter++;
+                      $posts->the_post();
+                      if($counter == 1) {}
+                      else{
+                        get_template_part('parts/blog/blog', 'post'); 
+                      }
+                    endwhile;    
+                  endif;
+
+            ?>  
           </div>
+          <div class="row more-words the-next-btn mt-5 justify-content-right">
+                <a href="/blog-svi">Pogledaj sve <i class="fas fa-arrow-right"></i></a> 
+              </div>
         </div>
-      </div>
+      </div><!-- col-md-8 -->
       <div class="col-md-4">
       <?php get_template_part('parts/sidebar/sidebar', 'blog'); ?>
       </div>

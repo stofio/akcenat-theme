@@ -14,20 +14,22 @@
         
         <?php
 
-        $najnovije_reci = new WP_Query( array( 'cat' => 1, 'posts_per_page' => 10 ));
+        $najnovije_reci = new WP_Query( array( 'cat' => 1, 'posts_per_page' => 15, 'paged' => $paged ));
              if ( $najnovije_reci->have_posts() ) : 
               while ( $najnovije_reci->have_posts() ) : 
                    $najnovije_reci->the_post();
                    get_template_part( 'parts/card/card-page', get_post_format() );
           
               endwhile; 
-            endif;
-            wp_reset_postdata();
           ?>
 
-        <div class="row more-words">
-          <a href="/lista-novijih-reci" class="red-btn">Pogledaj još <i class="fas fa-arrow-right"></i></a>
-        </div>
+          <div class="row more-words the-next-btn">
+              <?php echo previous_posts_link( '<i class="fas fa-arrow-left"></i> nazad', $najnovije_reci->max_num_pages ); ?> 
+              <?php echo next_posts_link( 'napred <i class="fas fa-arrow-right"></i>', $najnovije_reci->max_num_pages ); ?> 
+          </div>
+          <?php
+          endif; 
+          ?>
       </div>
       <div class="col-md-4">
         <?php get_template_part('parts/sidebar/sidebar', 'page'); ?>
