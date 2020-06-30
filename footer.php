@@ -13,10 +13,10 @@
 <footer>
     <div class="container text-center">
       <div class="text-center footer-links">
-        <a href="">Home</a> |
-        <a href="">Kontakt</a> |
-        <a href="">O nama</a> |
-        <a href="">Politika privatnosti</a>
+        <a href="/">Home</a> |
+        <a href="/kontakt">Kontakt</a> |
+        <a href="/o-nama">O nama</a> |
+        <a href="/politika-privatnosti/">Politika privatnosti</a>
       </div>
       <p>Copyright © Akcenat - srpski rečnik <?php echo current_time( 'Y' ); ?> | Sva prava zadržana</p>
   </footer>

@@ -3,7 +3,7 @@
 <section class="container words-by-letter">
     <div class="row">
       <div class="col-lg-2 col-md-0">
-        <div class="duga-reklama">Reklama</div>
+        <?php get_template_part('parts/sidebar/sidebar', 'left'); ?>
       </div>
       <div class="col-lg-6 col-md-8">
         <div class="title"> 
@@ -14,12 +14,11 @@
         
         <?php
 
-        $najnovije_reci = new WP_Query( array( 'cat' => 1, 'posts_per_page' => 15, 'paged' => $paged ));
+        $najnovije_reci = new WP_Query( array( 'cat' => 1, 'paged' => $paged ));
              if ( $najnovije_reci->have_posts() ) : 
               while ( $najnovije_reci->have_posts() ) : 
                    $najnovije_reci->the_post();
                    get_template_part( 'parts/card/card-page', get_post_format() );
-          
               endwhile; 
           ?>
 

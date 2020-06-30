@@ -17,14 +17,13 @@
             
             $posts = new WP_Query( 
                 array( 'cat' => 2,
-                'posts_per_page' => 20,
-                'paged' => $paged
-                ));        
-                if ( $posts->have_posts() ) : 
-                while ( $posts->have_posts() ) :
-                    $posts->the_post();
-                    get_template_part('parts/blog/blog', 'post'); 
-                endwhile;    
+                'paged' => $paged ));    
+
+            if ( $posts->have_posts() ) : 
+            while ( $posts->have_posts() ) :
+                $posts->the_post();
+                get_template_part('parts/blog/blog', 'post'); 
+            endwhile;    
                   
             ?>  
           </div>

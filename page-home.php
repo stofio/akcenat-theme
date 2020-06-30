@@ -20,7 +20,7 @@
  <?php get_template_part('parts/section/section', 'by-letters'); ?>
 
   <div class="container">
-    <div class="square-ad">Reklama</div>
+    <div class="square-ad" style="display:none">Reklama</div>
   </div>
 
   <?php get_template_part('parts/section/section', 'blog'); ?>

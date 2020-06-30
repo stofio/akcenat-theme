@@ -704,3 +704,28 @@ span.page-numbers.current {
   margin: 0;
   margin-right: 15px;
 }
+
+input.red-btn {
+  width: auto;
+  border: none;
+}
+
+.send-word-error {
+  background-color: #ff000038;
+  border: solid 1px red;
+  padding: 3px;
+  margin-bottom: 15px;
+}
+
+.send-word-success {
+  background-color: #28a7455c;
+  border: solid 1px #28a745;
+  padding: 3px;
+  margin-bottom: 15px;
+}
+
+.arrow-container button {
+  outline: none;
+  background: none;
+  border: none;
+}

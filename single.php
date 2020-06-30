@@ -25,6 +25,7 @@
       <div class="col-md-4">
       <?php get_template_part('parts/sidebar/sidebar', 'single'); ?>
       </div>
+      <div class="divider mt-5"></div>
       <?php get_template_part('parts/section/section', 'by-letters'); ?>
     </div>
   </section>

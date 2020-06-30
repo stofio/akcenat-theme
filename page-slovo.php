@@ -26,7 +26,7 @@ else { $shownLetter = $letter; }
 <section class="container words-by-letter">
     <div class="row">
       <div class="col-lg-2 col-md-0">
-        <div class="duga-reklama">Reklama</div>
+        <?php get_template_part('parts/sidebar/sidebar', 'left'); ?>
       </div>
       <div class="col-lg-6 col-md-8">
         <div class="title"> 
@@ -40,7 +40,6 @@ else { $shownLetter = $letter; }
           $reci_slova = new WP_Query( 
              array( 'cat' => 1,
                     'starts_with' => $letter,
-                    'posts_per_page' => 15,
                     'paged' => $paged,
                     'orderby' => 'title',
                     'order'   => 'ASC', )

@@ -17,7 +17,6 @@
             
             $posts = new WP_Query( 
                 array( 'cat' => 3,
-                'posts_per_page' => 30,
                 'paged' => $paged
                 ));        
                 if ( $posts->have_posts() ) : 

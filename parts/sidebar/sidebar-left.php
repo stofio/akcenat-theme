@@ -1,1 +1,1 @@
-<div class="duga-reklama">Reklama</div>
+<div class="duga-reklama" style="display:none">Reklama</div>
