@@ -6,11 +6,13 @@
       <?php get_template_part('parts/sidebar/sidebar', 'left'); ?>
       </div>
       <div class="col-lg-6 col-md-8">
-        <div class="title">
+        <div class="title mb-3">
           <h1>DODAJTE NOVU REČ NA <span style="text-transform: lowercase;"><span style="color: #0062cc;">AKCENAT</span>.COM</span>
           </h1>
         </div>
-        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+        <p>U svakom trenutku možete poslati neku reč sa što detaljnijim opisom te reči administraciji sajta akcenat.com</p>
+        <p>Prosto i jednostavno ispunite formu za unos reči i pošaljite.</p>
+        <p>Sa zadovoljstvom ćemo je objaviti na sajtu ukoliko je nema već u bazi reči.</p>  
         <div class="box-words new-word">
           <h3>Dodaj novu reč ovde</h3>
           <?php echo $response; ?>

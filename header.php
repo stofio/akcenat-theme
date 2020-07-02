@@ -26,7 +26,9 @@
     </button>
       </div>
       <div class="logo-container">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/logo akcenat.png">
+        <a href="/">
+          <img src="<?php echo get_template_directory_uri(); ?>/images/logo akcenat.png">
+        </a>
       </div>
       <div class="collapse navbar-collapse" id="navbar">
         <ul class="navbar-nav mr-auto">

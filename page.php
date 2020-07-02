@@ -19,6 +19,7 @@
     <div class="col-md-4">
         <?php get_template_part('parts/sidebar/sidebar', 'page'); ?>
     </div>
+    <?php get_template_part('parts/section/section', 'blog'); ?>
 </div>
 
 <?php get_footer(); ?>

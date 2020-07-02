@@ -10,27 +10,50 @@
           <h1>SKRAĆENICE</span>
           </h1>
           <h5>ARHIVA</h5>
+          <?php
+          
+          $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+          $skracenice = new WP_Query( 
+            array( 'cat' => 3,
+            'paged' => $paged
+            )); 
+          
+          ?>
+          <p>Strana <?php echo $paged; ?> od <?php echo $skracenice->max_num_pages; ?></p>
         </div>
         <div class="blog-posts mt-4">
-          <div class="other-posts d-flex">
+          <div class="other-posts">
             <?php 
-            
-            $posts = new WP_Query( 
-                array( 'cat' => 3,
-                'paged' => $paged
-                ));        
-                if ( $posts->have_posts() ) : 
-                while ( $posts->have_posts() ) :
-                    $posts->the_post();
+       
+                if ( $skracenice->have_posts() ) : 
+                while ( $skracenice->have_posts() ) :
+                    $skracenice->the_post();
                     get_template_part('parts/card/card', 'skracenica'); 
                 endwhile;    
                   
             ?>  
           </div>
         </div>
-        <div class="row more-words the-next-btn mt-5">
-            <?php echo previous_posts_link( '<i class="fas fa-arrow-left"></i> nazad', $posts->max_num_pages ); ?> 
-            <?php echo next_posts_link( 'napred <i class="fas fa-arrow-right"></i>', $posts->max_num_pages ); ?> 
+        <div class="row justify-content-center">
+            <div class="pagination text-center mt-3">
+              <?php 
+                  echo paginate_links( array(
+                      'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
+                      'total'        => $skracenice->max_num_pages,
+                      'current'      => max( 1, get_query_var( 'paged' ) ),
+                      'format'       => '?paged=%#%',
+                      'show_all'     => false,
+                      'type'         => 'plain',
+                      'end_size'     => 1,
+                      'mid_size'     => 1,
+                      'prev_next'    => true,
+                      'prev_text'    => sprintf( '<i></i> %1$s', __( '', 'text-domain' ) ),
+                      'next_text'    => sprintf( '%1$s <i></i>', __( '', 'text-domain' ) ),
+                      'add_args'     => false,
+                      'add_fragment' => '',
+                  ) );
+              ?>
+            </div>
         </div>
         <?php
         endif;

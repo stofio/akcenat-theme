@@ -1,4 +1,4 @@
-<div class="col-md-6 text-center mt-3">
+<div class="col-md-12 text-center mb-3">
     <div class="post-img">
         <a href="<?php the_permalink(); ?>">
             <?php

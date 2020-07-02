@@ -47,8 +47,8 @@
             ?>  
           </div>
           <div class="row more-words the-next-btn mt-5 justify-content-right">
-                <a href="/kategorija/blog/">Pogledaj sve <i class="fas fa-arrow-right"></i></a> 
-              </div>
+            <a href="/kategorija/blog/">Pogledaj sve <i class="fas fa-arrow-right"></i></a> 
+          </div>
         </div>
       </div><!-- col-md-8 -->
       <div class="col-md-4">

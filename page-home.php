@@ -1,5 +1,14 @@
 <?php get_header(); ?>
 
+<?php
+$reci = new WP_Query( array( 'cat' => 1 ) );
+$uk_reci = $reci->post_count;
+
+$skracenice = new WP_Query( array( 'cat' => 2 ) );
+$uk_skracenice = $skracenice->post_count;
+
+?>
+
 <div class="container home-logo">
     <div class="row">
       <img src="<?php echo get_template_directory_uri(); ?>/images/logo akcenat.png" width="200">
@@ -10,8 +19,22 @@
     <div class="row">
       <div class="intro">
         <h1>Veliki srpski recnik manje poznatih reci i izraza</h1>
-        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content
-          here, content here', making it look like readable English.</p>
+        <p>Veliki broj reči preuzetih iz stranih jezika u poslednje vreme, posebno onih iz engleskog
+        (preko zabavne muzike, sporta, filma, politike, marketinga, kozmetike, turizma, kompjuterske tehnike itd.), ali i onih 
+        koje su ranije prihvaćene, adaptirane i uključene u leksikon srpskog standardnog jezika, a kojima značenja
+        nisu jasna, ili nisu dovoljno jasna, prosečnom obrazovanom izvornom govorniku, ili pak korisniku našeg jezika
+        , diktiraju potrebu da se sve takve reči sakupe, popišu,opišu i akcentuju, te da im se utvrdi dalje i bliže poreklo
+        (etimologija) i značenje, odnosno značenja.
+        </p>
+        <h2 class="mb-3">Ukupno na akcenat.com</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <h3>Reči: <?php echo $uk_reci; ?></h3>
+          </div>
+          <div class="col-md-6">
+            <h3>Skraćenice: <?php echo $uk_skracenice; ?></h3>
+          </div>
+        </div>
       </div>
     </div>
   </div>

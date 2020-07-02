@@ -1,5 +1,5 @@
 <div class="container search-letters">
-    <h2>PRETRAŽI PO SLOVO</h2>
+    <h2>PRETRAŽI PO SLOVU</h2>
     <div class="letters-container">
       <p>Spisak slova srpskog jezika</p>
       <div class="small-divider"></div>

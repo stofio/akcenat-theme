@@ -44,8 +44,26 @@ else { $shownLetter = $letter; }
           if ( $reci_slova->have_posts() ) : 
           ?>
           <p>Strana <?php echo $paged; ?> od <?php echo $reci_slova->max_num_pages; ?></p>
-          <div class="row justify-content-center">
-            <div class="pagination">
+        </div>
+        <div class="box-words">
+          <div class="row">
+            <div class="col-md-12">
+              <ul>
+              <?php
+                    while ( $reci_slova->have_posts() ) : 
+                        $reci_slova->the_post();
+                        ?>
+                        <a href="<?php echo the_permalink()?>"><li><?php echo the_title()?></li></a>
+                        <?php
+                    endwhile;  
+                endif; 
+                ?>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="pagination text-center mt-3">
               <?php 
                   echo paginate_links( array(
                       'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
@@ -65,24 +83,6 @@ else { $shownLetter = $letter; }
               ?>
             </div>
           </div>
-        </div>
-        <div class="box-words">
-          <div class="row">
-            <div class="col-md-12">
-              <ul>
-              <?php
-                    while ( $reci_slova->have_posts() ) : 
-                        $reci_slova->the_post();
-                        ?>
-                        <a href="<?php echo the_permalink()?>"><li><?php echo the_title()?></li></a>
-                        <?php
-                    endwhile;  
-                endif; 
-                ?>
-              </ul>
-            </div>
-          </div>
-        </div>
       </div> <!-- end col-lg-6 col-md-8 -->
       <div class="col-md-4">
       <?php get_template_part('parts/sidebar/sidebar', 'page'); ?>

@@ -289,10 +289,6 @@ header {
   justify-content: center;
 }
 
-.blog-section img {
-  margin-top: 8px;
-}
-
 .blog-section h2 {
   text-align: center;
   text-transform: uppercase;
@@ -728,4 +724,16 @@ input.red-btn {
   outline: none;
   background: none;
   border: none;
+}
+
+.word-card.skracenica {
+  padding-bottom: 16px !important;
+}
+
+.blog-container .last-post {
+  margin-top: 0 !important;
+}
+
+.blog-container .last-post p {
+  display: none;
 }
