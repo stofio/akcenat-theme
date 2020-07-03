@@ -11,9 +11,9 @@
           <?php
           $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
           $sve_reci = new WP_Query( 
-             array( 'cat' => 1,
+             array( 'cat' => get_cat_ID( 'reci' ),
                     'paged' => $paged,
-                    'posts_per_page' => 1,
+                    'posts_per_page' => 30,
                     'orderby' => 'title',
                     'order'   => 'ASC', ));        
           if ( $sve_reci->have_posts() ) : 

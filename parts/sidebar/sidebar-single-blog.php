@@ -9,12 +9,12 @@ $title = $post->post_title;
     <div class="share-btns d-flex">
         <p>Podeli ovaj članak</p>
         <div>
-            <a href=’http://www.facebook.com/share.php?u=<?php print(urlencode($page_url)); ?>&title=<?php print(urlencode($title)); ?>’ target=’_blank’>
+            <a href="https://www.facebook.com/sharer?u=<?php the_permalink();?>&t=<?php the_title(); ?>" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-facebook-f"></i>
             </a>
-            <a href=’http://twitter.com/home?status=<?php print(urlencode($title)); ?>+<?php print(urlencode($page_url)); ?>’ target=’_blank’>
+            <a title="Podeli na Twitter" href="http://twitter.com/intent/tweet?text=Čitati: <?php the_title(); ?>&url=<?php the_permalink(); ?>" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-twitter"></i>
-            </a>
+            </a> 
         </div>
     </div>
     <a href="/kategorija/reci/" class="long-red-btn row">Listaj rečnik akcenat.com <i class="fas fa-arrow-right"></i></a>

@@ -1,11 +1,12 @@
 <?php get_header(); ?>
 
 <?php
-$reci = new WP_Query( array( 'cat' => 1 ) );
-$uk_reci = $reci->post_count;
 
-$skracenice = new WP_Query( array( 'cat' => 2 ) );
-$uk_skracenice = $skracenice->post_count;
+$catreci = get_category(get_cat_ID( 'reci' ));
+$uk_reci = $catreci->category_count;
+
+$catskracenice = get_category(get_cat_ID( 'skracenice' ));
+$uk_skracenice = $catskracenice->category_count;
 
 ?>
 

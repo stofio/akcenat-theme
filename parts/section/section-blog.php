@@ -5,7 +5,7 @@
     <?php
 
       $blog_post = new WP_Query( 
-      array( 'cat' => 2,
+      array( 'cat' => get_cat_ID( 'blog' ),
             'posts_per_page' => 1,
           ));        
           
@@ -22,7 +22,7 @@
     <?php 
             
       $posts = new WP_Query( 
-        array( 'cat' => 2,
+        array( 'cat' => get_cat_ID( 'blog' ),
           'posts_per_page' => 5,
           'paged' => $paged
         ));        

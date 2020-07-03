@@ -14,7 +14,7 @@
           
           $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
           $skracenice = new WP_Query( 
-            array( 'cat' => 3,
+            array( 'cat' => get_cat_ID( 'skracenice' ),
             'paged' => $paged
             )); 
           

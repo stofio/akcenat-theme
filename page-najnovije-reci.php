@@ -13,7 +13,7 @@
           <?php
 
           $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-          $najnovije_reci = new WP_Query( array( 'cat' => 1, 'paged' => $paged ));
+          $najnovije_reci = new WP_Query( array( 'cat' => get_cat_ID( 'reci' ), 'paged' => $paged ));
           
           ?>
           <p>Strana <?php echo $paged; ?> od <?php echo $najnovije_reci->max_num_pages; ?></p>

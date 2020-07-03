@@ -10,7 +10,7 @@
         <div class="title">
           <h1>KONTAKTIRAJ NAS</h1>
         </div>
-        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+        <p>Ukoliko imate neko pitanje ili ste primetili neku grešku, možete nam pisati u bilo kom trenutku popunjavanjem sledeće forme, odgovorićemo vam na mejl sa zadovoljstvom.</p>
         <div class="box-words new-word">
           <h3>Napiši nam poruku</h3>
           <?php echo $response; ?>

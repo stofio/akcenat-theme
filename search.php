@@ -9,8 +9,8 @@
     <div class="col-lg-6 col-md-8">  
         <?php
             $the_query = new WP_Query( 
-                array( 'cat' => 1,
-                       'posts_per_page' => 2,
+                array( 'cat' => get_cat_ID( 'reci' ),
+                       'posts_per_page' => 15,
                        'paged' => $paged ));
 
             if ($the_query->have_posts()):

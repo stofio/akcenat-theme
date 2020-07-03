@@ -11,7 +11,7 @@
           <div class="divider"></div>
         </div>
         <?php
-            $query = new WP_Query(  array( 'cat' => 2 ) );
+            $query = new WP_Query(  array( 'cat' => get_cat_ID( 'skracenica' ) ) );
              if ( have_posts() ) : 
               while ( have_posts() ) : 
       

@@ -20,6 +20,7 @@
       </div>
       <p>Copyright © Akcenat - srpski rečnik <?php echo current_time( 'Y' ); ?> | Sva prava zadržana</p>
   </footer>
+<?php wp_footer(); ?>
 </body>
 
 </html>

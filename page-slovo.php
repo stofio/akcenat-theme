@@ -38,7 +38,7 @@ else { $shownLetter = $letter; }
         <?php
           $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
           $reci_slova = new WP_Query( 
-             array( 'cat' => 1,
+             array( 'cat' => get_cat_ID( 'reci' ),
                     'starts_with' => $letter,
                     'paged' => $paged,
                     'orderby' => 'title',

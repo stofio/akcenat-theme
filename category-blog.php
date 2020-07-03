@@ -16,7 +16,7 @@
             <?php 
             
             $posts = new WP_Query( 
-                array( 'cat' => 2,
+                array( 'cat' => get_cat_ID( 'blog' ),
                 'paged' => $paged ));    
 
             if ( $posts->have_posts() ) : 

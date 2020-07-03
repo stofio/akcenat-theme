@@ -737,3 +737,11 @@ input.red-btn {
 .blog-container .last-post p {
   display: none;
 }
+
+.searchwp-live-search-no-min-chars:after {
+  content: "Nastavite pisati" !important;
+}
+
+.searchwp-live-search-result a {
+  color: #242424;
+}
