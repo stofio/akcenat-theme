@@ -9,21 +9,19 @@
     <div class="col-lg-6 col-md-8">  
         <?php
             $the_query = new WP_Query( 
-                array( 'cat' => get_cat_ID( 'reci' ),
-                       'posts_per_page' => 15,
-                       'paged' => $paged ));
+                array( 'paged' => $paged ));
 
-            if ($the_query->have_posts()):
+            if (have_posts()):
                 ?>
                 <h1 class="blog-page-title mb-4 text-center">Pretražili ste: <?php the_search_query(); ?></h1>
                 <?php
-                while ($the_query->have_posts()) : $the_query->the_post();
+                while (have_posts()) : the_post();
                         get_template_part( 'parts/card/card-page', get_post_format() );
                 endwhile;
         ?>
     <div class="row more-words the-next-btn mt-5">
-        <?php echo previous_posts_link( '<i class="fas fa-arrow-left"></i> nazad', $the_query->max_num_pages ); ?> 
-        <?php echo next_posts_link( 'napred <i class="fas fa-arrow-right"></i>', $the_query->max_num_pages ); ?> 
+        <?php echo previous_posts_link( '<i class="fas fa-arrow-left"></i> nazad'); ?> 
+        <?php echo next_posts_link( 'napred <i class="fas fa-arrow-right"></i>'); ?> 
     </div>
     <?php
     endif;

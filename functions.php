@@ -83,7 +83,7 @@ function generate_response($type, $message){
  $opc_location = test_input($_POST['opc_location']);
  
  //mail variables
- $to = "stofio@live.com";
+ $to = "kontakt@akcenat.com";
  $subject = "Preporuka reči za akcenat.com";
  $msg = 'Reč: [' . $new_w . ']; Značenje reči: [' .  $meaning . ']; Primer: [' . $example . '].' . "\r\n";
  if(!empty($opc_name) || !empty($opc_location)) {
@@ -118,7 +118,7 @@ $contact_email = test_input($_POST['email']);
 $contact_msg = test_input($_POST['msg']);
 
 //email variables
-$contact_to = "stofio@live.com";
+$contact_to = "kontakt@akcenat.com";
 $contact_subject = "Poruka iz kontakt forme akcenat.com";
 $contact_headers = 'From: '. $contact_email . "\r\n" . 'Reply-To: ' . $contact_email . "\r\n";
 
@@ -135,8 +135,15 @@ if($_POST['send_contact_msg']) {
       $sent_contact_msg = wp_mail($contact_to, $contact_subject, strip_tags($contact_msg));
       if($sent_contact_msg) generate_response("email-success", $message_sent_contact); 
       else generate_response("email-error", $message_unsent_contact); 
-      echo 'aaa';
     }
   } 
 }
 //endKONTAKT
+
+
+add_filter( 'redirect_canonical', 'custom_disable_redirect_canonical' );
+function custom_disable_redirect_canonical( $redirect_url ) {
+    if ( is_paged() && is_singular() ) $redirect_url = false; 
+    return $redirect_url; 
+}
+
